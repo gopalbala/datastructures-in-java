@@ -11,18 +11,22 @@ package com.gb.datastructures.practice;
  * arr = {1,5,3}
  */
 public class RemoveEvenNumbersInArray {
-    public  int[] removeEven(int[] arr) {
-        int evenCount = 0;
+    public int[] removeEven(int[] arr) {
+        if (arr.length == 0)
+            return null;
+        if (arr.length == 1 && arr[0] % 2 > 0)
+            return arr;
+        int oddCount = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 > 0) {
-                evenCount++;
+                oddCount++;
             }
         }
-        int result[] = new int[evenCount];
-        evenCount = 0;
+        int result[] = new int[oddCount];
+        oddCount = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 > 0) {
-                result[evenCount++] = arr[i];
+                result[oddCount++] = arr[i];
             }
         }
         return result;
