@@ -21,10 +21,18 @@ package com.gb.datastructures.practice;
  */
 public class MergeTwoSortedArrays {
     public static int[] mergeArrays(int[] arr1, int[] arr2) {
+        //Boundary conditions
+        if (arr1 == null && arr2 == null)
+            return null;
+        if (arr2.length == 0)
+            return arr1;
+        if (arr1.length == 0)
+            return arr2;
+
         int totalLen = arr1.length + arr2.length;
         int[] newArr = new int[totalLen];
         int i = 0, j = 0, count = 0;
-        ;
+
         while (i < arr1.length && j < arr2.length) {
             if (arr1[i] <= arr2[j]) {
                 newArr[count++] = arr1[i++];

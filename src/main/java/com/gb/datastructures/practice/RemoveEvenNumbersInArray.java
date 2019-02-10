@@ -12,16 +12,20 @@ package com.gb.datastructures.practice;
  */
 public class RemoveEvenNumbersInArray {
     public int[] removeEven(int[] arr) {
+        //Boundary condition
         if (arr.length == 0)
             return null;
+
         if (arr.length == 1 && arr[0] % 2 > 0)
             return arr;
+
         int oddCount = 0;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] % 2 > 0) {
                 oddCount++;
             }
         }
+        
         int result[] = new int[oddCount];
         oddCount = 0;
         for (int i = 0; i < arr.length; i++) {

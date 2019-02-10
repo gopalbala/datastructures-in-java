@@ -5,7 +5,16 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Created by gbalasubramanian on 09/02/19.
+ * Output
+
+ Second largest element present in the array
+ Sample Input
+
+ arr = {9,2,3,6}
+
+ Sample Output
+
+ 6
  */
 public class SecondMaximum {
     public int findSecondMaximum(int[] arr) {

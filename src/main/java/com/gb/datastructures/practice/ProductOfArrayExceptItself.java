@@ -5,12 +5,12 @@ import java.util.Arrays;
 
 /**
  * Sample Input
-
- arr = {1,2,3,4}
-
- Sample Output
-
- arr = {24,12,8,6}
+ * <p>
+ * arr = {1,2,3,4}
+ * <p>
+ * Sample Output
+ * <p>
+ * arr = {24,12,8,6}
  */
 public class ProductOfArrayExceptItself {
     public static int[] findProduct(int arr[]) {
@@ -20,33 +20,33 @@ public class ProductOfArrayExceptItself {
         int[] right = new int[arr.length];
         Arrays.fill(left, 1);
         Arrays.fill(right, 1);
-        //left[0] = arr[0];
-
+        printArray(arr);
         for (int i = 1; i < arr.length; i++) {
             left[i] = arr[i - 1] * left[i - 1];
 
         }
-        //right[arr.length - 1] = arr[arr.length - 1];
+
         for (int i = arr.length - 2; i >= 0; i--) {
             right[i] = arr[i + 1] * right[i + 1];
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(left[i] + " ");
-        }
-        System.out.println();
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(right[i] + " ");
-        }
+        printArray(left);
+
+        printArray(right);
 
         for (int i = 0; i < arr.length; i++) {
             product[i] = right[i] * left[i];
         }
-        System.out.println();
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(product[i] + " ");
-        }
+
+        printArray(product);
         return product;
+    }
+
+    static void printArray(int[] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
     }
 
     public static void main(String[] args) {
