@@ -18,10 +18,10 @@ public class LeftSmallerRightGreaterTest {
     }
     @Test
     public void findPositionTest(){
-        int[] arr = {7, 14, 16, 18};
+        int[] arr = //{7, 14, 16, 18};
         //{4, 3, 2, 7, 8, 9};
-        //{5, 1, 4, 3, 6, 8, 10, 7, 9};
+        {5, 1, 4, 3, 6, 8, 10, 7, 9};
         int number = leftLessRightGreater.findPos(arr);
-        assertEquals(14,number);
+        assertEquals(6,number);
     }
 }
