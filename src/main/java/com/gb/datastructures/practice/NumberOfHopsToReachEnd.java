@@ -5,19 +5,31 @@ package com.gb.datastructures.practice;
  */
 public class NumberOfHopsToReachEnd {
 
-    int getMinNumberOfHopsRecursive(int len) {
+    int getNumberOfHopsRecursive(int len) {
 
         if (len < 0)
             return 0;
         if (len == 0)
             return 1;
 
-        return getMinNumberOfHopsRecursive(len - 1) + getMinNumberOfHopsRecursive(len - 2) + getMinNumberOfHopsRecursive(len - 3);
+        return getNumberOfHopsRecursive(len - 1) + getNumberOfHopsRecursive(len - 2) + getNumberOfHopsRecursive(len - 3);
 
+    }
+
+    int getNumberOfHops(int len) {
+        int[] ways = new int[len + 1];
+        ways[0] = 1;
+        ways[1] = 1;
+        ways[2] = 2;
+        for (int i = 3; i <= len; i++) {
+            ways[i] = ways[i - 1] + ways[i - 2] + ways[i - 3];
+        }
+        return ways[len];
     }
 
     public static void main(String[] args) {
         NumberOfHopsToReachEnd numberOfHopsToReachEnd = new NumberOfHopsToReachEnd();
-        System.out.println(numberOfHopsToReachEnd.getMinNumberOfHopsRecursive(5));
+        System.out.println(numberOfHopsToReachEnd.getNumberOfHopsRecursive(5));
+        System.out.println(numberOfHopsToReachEnd.getNumberOfHops(5));
     }
 }
