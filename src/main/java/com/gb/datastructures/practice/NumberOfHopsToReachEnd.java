@@ -15,7 +15,7 @@ public class NumberOfHopsToReachEnd {
         return getNumberOfHopsRecursive(len - 1) + getNumberOfHopsRecursive(len - 2) + getNumberOfHopsRecursive(len - 3);
 
     }
-
+    // why
     int getNumberOfHops(int len) {
         int[] ways = new int[len + 1];
         ways[0] = 1;
