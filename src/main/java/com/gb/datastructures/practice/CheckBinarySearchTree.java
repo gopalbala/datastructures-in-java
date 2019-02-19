@@ -39,4 +39,5 @@ class Tree {
             return false;
         return checkBst(root.left, min, root.data - 1) && checkBst(root.right, root.data - 1, max);
     }
+
 }

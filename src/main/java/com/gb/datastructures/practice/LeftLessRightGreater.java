@@ -38,11 +38,40 @@ public class LeftLessRightGreater {
         System.out.println();
     }
 
+    public static int find(int a[]){
+        int k=0, j = 2;
+        Integer solution = null;
+        for(int i=1;i< a.length-1;){
+            if((a[i] > a[k]) && (a[i] < a[j]))
+            {
+                if(k == i && j== a.length-1){
+                    solution = a[i];
+                    break;
+                }
+                if(k < i){
+                    k++;
+                }
+                if(j<=a.length-1){
+                    j++;
+                }
+            }
+            else{
+                k=0;
+                i=i+1;
+                j=i+1;
+            }
+        }
+        return solution;
+    }
+
     public static void main(String[] args) {
         int[] arr = //{7, 14, 16, 18};
-                {4, 3, 2, 7, 8, 9};
-                 //{5, 1, 4, 3, 6, 8, 10, 7, 9};
+                //{4, 3, 2, 7, 8, 9};
+                // {5, 1, 4, 3, 6, 8, 10, 7, 9};
+                {4, 2, 5, 7};
         LeftLessRightGreater leftLessRightGreater = new LeftLessRightGreater();
         leftLessRightGreater.findPos(arr);
+        //System.out.println(find(arr));
+
     }
 }
