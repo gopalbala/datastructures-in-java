@@ -2,21 +2,20 @@ package com.gb.datastructures.practice.com.gb.datastructures.practice.strings;
 
 /**
  * The string "PAYPALISHIRING" is written in a zigzag pattern on a given number of rows like this: (you may want to display this pattern in a fixed font for better legibility)
-
- P   A   H   N
- A P L S I I G
- Y   I   R
- And then read line by line: "PAHNAPLSIIGYIR"
-
- Input: s = "PAYPALISHIRING", numRows = 4
- Output: "PINALSIGYAHRPI"
- Explanation:
-
- P     I    N
- A   L S  I G
- Y A   H R
- P     I
-
+ * <p>
+ * P   A   H   N
+ * A P L S I I G
+ * Y   I   R
+ * And then read line by line: "PAHNAPLSIIGYIR"
+ * <p>
+ * Input: s = "PAYPALISHIRING", numRows = 4
+ * Output: "PINALSIGYAHRPI"
+ * Explanation:
+ * <p>
+ * P     I    N
+ * A   L S  I G
+ * Y A   H R
+ * P     I
  */
 public class ZigZagConversion {
     static String convert(String s, int num) {
@@ -29,16 +28,16 @@ public class ZigZagConversion {
         if (num == 1 || s.length() < num) {
             return s;
         }
-        for (int i=0;i<s.length();i++) {
+        for (int i = 0; i < s.length(); i++) {
             temp[pos] += s.charAt(i);
-            if (pos == 0){
+            if (pos == 0) {
                 step = 1;
-            } else if(pos == rowIndex) {
+            } else if (pos == rowIndex) {
                 step = -1;
             }
             pos = pos + step;
         }
-        for (int i=0;i<num;i++){
+        for (int i = 0; i < num; i++) {
             result += temp[i];
         }
         return result;
