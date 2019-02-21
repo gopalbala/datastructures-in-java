@@ -1,4 +1,4 @@
-package com.gb.datastructures.practice.com.gb.datastructures.practice.com.gb.datastructures.practice.linkedlists;
+package com.gb.datastructures.practice.linkedlists;
 
 /**
  * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
