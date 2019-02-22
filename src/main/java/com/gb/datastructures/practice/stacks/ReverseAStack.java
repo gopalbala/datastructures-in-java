@@ -1,4 +1,4 @@
-package com.gb.datastructures.practice.com.gb.datastructures.practice.stacks;
+package com.gb.datastructures.practice.stacks;
 
 import java.util.Stack;
 
