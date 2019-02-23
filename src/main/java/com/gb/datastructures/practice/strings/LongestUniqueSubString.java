@@ -6,41 +6,39 @@ import java.util.Arrays;
  * Created by gbalasubramanian on 22/02/19.
  */
 public class LongestUniqueSubString {
-    static final int NO_OF_CHARS = 256;
     public static int lengthOfLongestSubstring(String s) {
-        int curLen = 1;    // length of current substring
-        int maxLen = 1;    // result
-        int prevIndex;        //  previous index
-        int i;
-        int visited[] = new int[NO_OF_CHARS];
+        int visited[] = new int[256];
 
-        for (i = 0; i < NO_OF_CHARS; i++) {
+        for (int i = 0; i < visited.length; i++) {
             visited[i] = -1;
         }
+        int curLen = 1;
+        int maxLen = 1;
+        int prevIndex;
 
         visited[s.charAt(0)] = 0;
 
         /* Start from the second character. First character is
            already processed (curLen and maxLen are initialized
          as 1, and visited[str[0]] is set */
-        for(i = 1; i < s.length(); i++)
+        for(int i = 1; i < s.length(); i++)
         {
             prevIndex = visited[s.charAt(i)];
 
             /* If the current character is not present in
            the already processed substring or it is not
-              part of the current NRCS, then do curLen++ */
+              part of the current non repeated character in string , then do curLen++ */
             if(prevIndex == -1 || i - curLen > prevIndex)
                 curLen++;
 
             /* If the current character is present in currently
-               considered NRCS, then update NRCS to start from
+               considered non repeated character in string, then update non repeated character in string to start from
                the next character of previous instance. */
             else
             {
-                /* Also, when we are changing the NRCS, we
+                /* Also, when we are changing the non repeated character in string, we
                    should also check whether length of the
-                   previous NRCS was greater than maxLen or
+                   previous non repeated character in string was greater than maxLen or
                    not.*/
                 if(curLen > maxLen)
                     maxLen = curLen;

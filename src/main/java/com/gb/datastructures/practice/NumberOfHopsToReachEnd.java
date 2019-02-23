@@ -14,8 +14,15 @@ public class NumberOfHopsToReachEnd {
 
         return getNumberOfHopsRecursive(len - 1) + getNumberOfHopsRecursive(len - 2) + getNumberOfHopsRecursive(len - 3);
 
+        // ways to reach to end by taking 1 step at a time
+        // 1 + 1 +1 +1 +1 = 5
+        //ways to reach to end by taking 2 steps at a time
+        // 2 + 2 + 1 =5
+        // 3 + 2 = 5
+        // 3 + 1 + 1 = 5
+
     }
-    // why
+    // based on fibonacci numbers.
     int getNumberOfHops(int len) {
         int[] ways = new int[len + 1];
         ways[0] = 1;
