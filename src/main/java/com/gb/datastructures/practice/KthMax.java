@@ -1,5 +1,9 @@
 package com.gb.datastructures.practice;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by gbalasubramanian on 09/02/19.
  */
@@ -13,6 +17,10 @@ public class KthMax {
                 findKthSmallest(array,partitionIndex+1,end,k);
             else
                 findKthSmallest(array,start,partitionIndex-1,k);
+
+            List<List<Integer>> a = new ArrayList<>();
+            List l = Arrays.asList(array);
+            a.add(l);
         }
     }
 

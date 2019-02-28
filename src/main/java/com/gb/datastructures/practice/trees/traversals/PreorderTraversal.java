@@ -10,6 +10,15 @@ import java.util.List;
  */
 public class PreorderTraversal {
     List<Integer> preOrder = new ArrayList<>();
+
+    public void preOrder(TreeNode root) {
+        if (root == null)
+            return;
+        System.out.println(root.getVal());
+        preOrder(root.getLeft());
+        preOrder(root.getRight());
+    }
+
     public List<Integer> preorderTraversal(TreeNode root) {
         if(root == null)
             return preOrder;
@@ -31,5 +40,9 @@ public class PreorderTraversal {
         for (Integer integer : result) {
             System.out.print(integer + " ");
         }
+        System.out.println();
+
+        preorderTraversal.preOrder(root);
+
     }
 }

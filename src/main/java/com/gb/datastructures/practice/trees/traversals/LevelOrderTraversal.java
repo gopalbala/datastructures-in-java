@@ -34,4 +34,45 @@ public class LevelOrderTraversal {
 
         return levels;
     }
+
+    /**
+     *       1
+     *    2    3
+     *   4 5  6  7
+     *
+     * 1 -> queue
+     *
+     * 1 print []
+     *
+     * 2 - enqueue to queue [2]
+     * 3 - enqueue to queue [2,3]
+     *
+     * 2 - print [3]
+     *
+     * enqueue 4 -> [3,4]
+     * enqueue 5 -> [3,4,5]
+     *
+     * print 3
+     *
+     * enqueue [5] ->  [4,5,6]
+     * enqueue [60 -> [4,5,6,7]
+     *
+     * print 4 5 6 7
+     *
+     *
+     *
+     *
+     *
+     * @param args
+     */
+
+    public static void main(String[] args) {
+
+        TreeNode root = new TreeNode(2);
+        root.setLeft(new TreeNode(1));
+        root.setRight(new TreeNode(4));
+        root.getRight().setLeft(new TreeNode(3));
+       LevelOrderTraversal levelOrderTraversal = new LevelOrderTraversal();
+        System.out.println( levelOrderTraversal.levelOrder(root));
+    }
 }

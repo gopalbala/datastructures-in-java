@@ -32,4 +32,9 @@ public class InOrderTraversal {
             System.out.print(integer + " ");
         }
     }
+
+    //left , root, right
+    // sorted order
+
+    // inorder check if the previous element is less than the current element
 }

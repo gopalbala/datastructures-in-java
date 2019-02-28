@@ -1,5 +1,7 @@
 package com.gb.datastructures.practice.trees;
 
+import java.util.List;
+
 /**
  * Created by gbalasubramanian on 23/02/19.
  */
@@ -31,6 +33,8 @@ public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
+
+    //List<TreeNode> children;
 
     public TreeNode(int x) {
         val = x;
