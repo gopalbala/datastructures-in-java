@@ -1,8 +1,12 @@
 package com.gb.datastructures.practice;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by gbalasubramanian on 19/02/19.
  */
+
 public class PermutateString {
     static void permutate(String input, int l, int r) {
         if (l == r)
@@ -26,5 +30,6 @@ public class PermutateString {
     public static void main(String[] args) {
         String input = "abc";
         permutate(input,0,input.length()-1);
+        List<String> s = new ArrayList<>();
     }
 }
