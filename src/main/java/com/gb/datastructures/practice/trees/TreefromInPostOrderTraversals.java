@@ -22,12 +22,14 @@ public class TreefromInPostOrderTraversals {
         if (start == end)
             return node;
         int idx = 0;
+        //find the node from the inorder array
         for (int i = start; i <= end; i++) {
             if (ino[i] == node.val) {
                 idx = i;
                 break;
             }
         }
+        //construct the left and right halfs
         node.right = build(ino, po, idx + 1, end);
         node.left = build(ino, po, start, idx - 1);
 

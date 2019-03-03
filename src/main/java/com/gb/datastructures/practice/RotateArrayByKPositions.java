@@ -19,10 +19,10 @@ public class RotateArrayByKPositions {
             j = i;
             while (true) {
                 k = j + rotations;
-                if (k >= len){
+                if (k >= len) {
                     k = k - len;
                 }
-                if (k == i){
+                if (k == i) {
                     break;
                 }
                 arr[j] = arr[k];
@@ -31,15 +31,16 @@ public class RotateArrayByKPositions {
             }
             arr[j] = temp;
         }
-       printArray(arr);
+        printArray(arr);
     }
 
     void printArray(int[] arr) {
-        for (int i=0;i<arr.length;i++){
+        for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
+
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9};
         RotateArrayByKPositions rotateArrayByKPositions = new RotateArrayByKPositions();
