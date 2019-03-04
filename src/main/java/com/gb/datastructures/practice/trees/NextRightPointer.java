@@ -1,8 +1,5 @@
 package com.gb.datastructures.practice.trees;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * Created by gbalasubramanian on 03/03/19.
  */
