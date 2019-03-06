@@ -36,6 +36,13 @@ public class ReverseInPairs {
         }
     }
 
+    void printList(ListNode head) {
+        while (head != null) {
+            System.out.print(head + "->");
+            head = head.next;
+        }
+    }
+
     public static void main(String[] args) {
         ListNode node = new ListNode(1);
         node.next = new ListNode(2);
@@ -43,6 +50,6 @@ public class ReverseInPairs {
         node.next.next.next = new ListNode(4);
         ReverseInPairs reverseInPairs = new ReverseInPairs();
         ListNode n = reverseInPairs.swapPairs(node);
-        System.out.println(n);
+        reverseInPairs.printList(n);
     }
 }
