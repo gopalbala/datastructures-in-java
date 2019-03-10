@@ -13,7 +13,7 @@ public class JumpGameProblem {
         while ( nextPos <= nums.length) {
             nextPos += nums[i];
             i += nums[i];
-            if (nextPos == 0)
+            if (i< nums.length && nums[i] == 0)
                 return false;
             if (nextPos >= nums.length)
                 return true;
@@ -22,7 +22,7 @@ public class JumpGameProblem {
     }
 
     public static void main(String[] args) {
-        int[] nums = {2,3,1,1,4};//{3,2,1,0,4};//{2, 3, 1, 1, 4};
+        int[] nums = {3,2,1,0,4};//{2, 3, 1, 1, 4};
         JumpGameProblem jumpGameProblem = new JumpGameProblem();
         boolean res = jumpGameProblem.canJump(nums);
         System.out.println(res);
