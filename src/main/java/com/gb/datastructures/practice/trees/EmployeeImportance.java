@@ -24,8 +24,10 @@ public class EmployeeImportance {
     Map<Integer, Employee> empMap;
 
     void sumImp(Employee employee) {
-        if (employee.subordinates == null)
-             impSum =+ employee.importance;
+        if (employee.subordinates == null) {
+            impSum = +employee.importance;
+            return;
+        }
         impSum += employee.importance;
         for (Integer integer : employee.subordinates) {
             employee = empMap.get(integer);
