@@ -23,10 +23,28 @@ public class CheckBst {
             return true;
         if (root.val <= min || root.val >= max)
             return false;
-        return (validate(root.left, min, root.val ) &&
-                validate(root.right, root.val , max));
+        return (validate(root.left, min, root.val) &&
+                validate(root.right, root.val, max));
     }
 
+    boolean heightBalanced(TreeNode root) {
+        if (root == null)
+            return true;
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+        if (Math.abs(lheight-rheight)>1)
+            return false;
+        return heightBalanced(root.left) && heightBalanced(root.right);
+    }
+
+    int height(TreeNode root) {
+        if (root == null)
+            return 0;
+        int lheight = height(root.left);
+        int rheight = height(root.right);
+
+        return Math.max(lheight, rheight) + 1;
+    }
 
     public static void main(String[] args) {
         TreeNode treeNode = new TreeNode(2);

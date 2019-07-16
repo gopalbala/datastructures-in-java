@@ -41,6 +41,7 @@ public class Maze {
     }
 
     public static void main(String args[]) {
+
         Maze m = new Maze();
         int maze[][] = {{1, 0, 0, 0},
                 {1, 1, 0, 1},

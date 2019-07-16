@@ -8,15 +8,15 @@ import java.util.List;
  * Created by gbalasubramanian on 09/02/19.
  */
 public class KthMax {
-    void findKthSmallest(int[] array,int start,int end,int k) {
-        if(start<end){
-            int partitionIndex = partition(array,start,end);
-            if(partitionIndex == k)
+    void findKthSmallest(int[] array, int start, int end, int k) {
+        if (start < end) {
+            int partitionIndex = partition(array, start, end);
+            if (partitionIndex == k)
                 return;
-            else if(partitionIndex < k)
-                findKthSmallest(array,partitionIndex+1,end,k);
+            else if (partitionIndex < k)
+                findKthSmallest(array, partitionIndex + 1, end, k);
             else
-                findKthSmallest(array,start,partitionIndex-1,k);
+                findKthSmallest(array, start, partitionIndex - 1, k);
 
             List<List<Integer>> a = new ArrayList<>();
             List l = Arrays.asList(array);
@@ -32,7 +32,7 @@ public class KthMax {
             }
             System.out.println();
             if (partition == k)
-                return arr[k-1];
+                return arr[k - 1];
             else if (partition > k) {
                 return kthMaxElement(arr, low, partition - 1, k);
             } else {
@@ -52,8 +52,8 @@ public class KthMax {
                 swap(arr, j, i);
             }
         }
-        swap(arr, j+1, high);
-        return j+1;
+        swap(arr, j + 1, high);
+        return j + 1;
     }
 
     static int[] swap(int[] arr, int i, int j) {
