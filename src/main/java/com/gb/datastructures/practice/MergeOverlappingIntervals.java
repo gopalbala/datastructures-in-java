@@ -13,9 +13,6 @@ class MergeOverlappingIntervals {
     public static int[][] merge(int[][] intervals) {
         if (intervals.length == 0 || intervals.length == 1)
             return intervals;
-        if (intervals[0].length == 0 || intervals[0].length == 1)
-            return intervals;
-        //
         List<Output> source = new ArrayList<>();
 
         for (int i = 0; i < intervals.length; i++) {
@@ -33,12 +30,10 @@ class MergeOverlappingIntervals {
 
         for (int i = 1; i < output.length; i++) {
             if (output[j].end >= output[i].start) {
-                //Output o = new Output();
                 output[j].start = Math.min(output[j].start, output[i].start);
                 output[j].end = Math.max(output[i].end, output[j].end);
             } else {
                 output[++j] = output[i];
-                //j++;
             }
         }
 
